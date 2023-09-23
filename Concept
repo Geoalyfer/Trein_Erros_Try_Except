@@ -1,0 +1,42 @@
+**Formato**
+
+```python
+try:
+    'código que o python irá tentar executar'
+except:
+    'código que será executado se ocorrer uma exceção'
+else:
+    'código que será executado quando não ocorrer a exceção (opcional)'
+finally:
+    'código que será sempre executado (opcional)'
+```
+
+try:
+    print(nome)
+    print(10 / 0)
+except NameError:
+    print('Você está tentando usar um objeto não declarado')
+except ZeroDivisionError:
+    print('Você está tentando dividir um número por 0!')
+
+print('programa continua...')
+Você está tentando usar um objeto não declarado
+programa continua...
+
+try:
+    print(10 / 0)
+except Exception as e:
+    print(f'Ocorreu o seguinte erro: {e}')
+Ocorreu o seguinte erro: division by zero
+
+# o try...except não consegue tratar SyntaxError ----> porque o interpretador 
+# nem consegue executar o código!
+try:
+    fur i in range(10):
+        print(i)
+except:
+    print('Ocorreu um erro!')
+  Cell In[3], line 4
+    fur i in range(10):
+        ^
+SyntaxError: invalid syntax
